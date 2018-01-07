@@ -8,19 +8,22 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class CoreController
+class CoreController extends Controller
 {
 
     /**
-     * @Route("/core/home")
+     * @Route("/", name="homepage")
      */
     public function homeAction()
     {
         $number = mt_rand(0, 100);
-
-        return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
+		
+        return $this->render(
+        	'core/home.html.twig', 
+        	array( 'number' => $number,)
+			);
+		
+				
     }
 }
 
