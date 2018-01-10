@@ -1,0 +1,17 @@
+			  <nav class="white" role="navigation">
+			    <div class="nav-wrapper container">
+			    	
+			    	<a id="logo-container" href="/" class="brand-logo hide-on-med-and-down">
+			    		<img src="{{ asset('img/logo.png') }}"   height="60" alt="MySoulCareers">
+				    </a>
+				    	    		      
+			      <ul class="right hide-on-med-and-down">
+				 	<?= $this->partial('partial/topbar_li_list.phtml');  ?>         
+			      </ul>
+			
+			      <ul id="nav-mobile" class="side-nav">
+					<?= $this->partial('partial/topbar_li_list.phtml');  ?>  	        
+			      </ul>
+			      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+			    </div>
+			  </nav> 

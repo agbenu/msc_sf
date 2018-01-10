@@ -4,33 +4,13 @@
         <meta charset="UTF-8" />
         <title>{% block title %}My Soul Careers{% endblock %}</title>
         
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link rel="stylesheet"  href="{{ asset('css/agency.css') }}" />
-        <link rel="stylesheet"  href="{{ asset('css/style_for_template.css') }}" />
-        <link rel="stylesheet"  href="{{ asset('css/materialize.css') }}" />
-        <link rel="stylesheet"  href="{{ asset('font-awesome/css/font-awesome.css') }}" />
+			 {{ include('partials/css_files.html.twig') }}       
  
          {% block stylesheets %}{% endblock %}       
     </head>
     <body>
         {% block topbar %}
-			  <nav class="white" role="navigation">
-			    <div class="nav-wrapper container">
-			    	
-			    	<a id="logo-container" href="/" class="brand-logo hide-on-med-and-down">
-			    		<img src="{{ asset('img/logo.png') }}"   height="60" alt="MySoulCareers">
-				    </a>
-				    	    		      
-			      <ul class="right hide-on-med-and-down">
-				 	<?= $this->partial('partial/topbar_li_list.phtml');  ?>         
-			      </ul>
-			
-			      <ul id="nav-mobile" class="side-nav">
-					<?= $this->partial('partial/topbar_li_list.phtml');  ?>  	        
-			      </ul>
-			      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-			    </div>
-			  </nav>        
+			 {{ include('partials/topbar.html.twig') }}       
         {% endblock %}
             
         {% block body %}{% endblock %}
@@ -38,80 +18,11 @@
 
         {% block footer %}
 
-			<footer class="page-footer blue">
-			    <div class="container">
-			      <div class="row">
-			
-			        <div class="col l3 s12">
-			          <ul>
-			            <li>				 
-			            	<a class="white-text" href="<?= $this->url('core',['action'=>'about']) ?>">
-							 	About
-				             </a>  
-				        </li>
-				        <li>
-							 <a class="white-text" href="<?= $this->url('core',['action'=>'featureRequest']) ?>">
-							 	Feature request
-				             </a>          	        	          		        	
-			        	</li>
-			          </ul>
-			        </div>
-			
-			        <div class="col l3 s12">
-			          <ul>
-				        <li>
-							 <a class="white-text" href="<?= $this->url('core',['action'=>'foundBug']) ?>">
-							 	Bugs
-				             </a>          	        	          		        	
-			        	</li>
-				        <li>
-							 <a class="white-text" href="<?= $this->url('core',['action'=>'workshop']) ?>">
-							 	Workshop
-				             </a>          	        	          		        	
-			        	</li>        	
-			          </ul>
-			        </div>
-			                
-			        <div class="col l3 s12">
-			          <ul>
-				        <li>
-							 <a class="white-text" href="<?= $this->url('core',['action'=>'contactUs']) ?>">
-							 	Vision
-				             </a>          	        	          		        	
-			        	</li>
-				        <li>
-							 <a class="white-text" href="<?= $this->url('core',['action'=>'joinUs']) ?>">
-							 	Join us
-				             </a>          	        	          		        	
-			        	</li>
-			          </ul>
-			        </div>
-			
-			        <div class="col l3 s12">
-			          <ul>
-				        <li>
-							 <a class="white-text" href="<?= $this->url('core',['action'=>'contactUs']) ?>">
-							 	Contact us
-				             </a>          	        	          		        	
-			        	</li>
-			          </ul>
-			        </div>
-			                
-			      </div>
-			    </div>
-				
-				
-			    <div class="footer-copyright">
-			      <div class="container">
-			      Powered by <a class="brown-text text-lighten-3" href="http://techne.com">Techne</a>
-			      </div>
-			    </div>
-			  </footer>
+			 {{ include('partials/footer.html.twig') }} 
           
         {% endblock %}
-  		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  		<script src="js/bootstrap.min.js"></script>
-  		<script src="js/materialize.js"></script>
+        
+			 {{ include('partials/js_files.html.twig') }}               
   		
         {% block javascripts %}{% endblock %}
     </body>
